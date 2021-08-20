@@ -50,7 +50,7 @@ def mesh_grid_to_polygons(x, y):
             polygon = Polygon(np.array([[x[i, j], y[i, j]], [
                               x[i, j+1], y[i, j+1]], [x[i+1, j+1], y[i+1, j+1]], [x[i+1, j], y[i+1, j]]]), True)
             polygons.append(polygon)
-    p = PatchCollection(polygons, cmap='viridis')
+    p = PatchCollection(polygons, cmap='Greys')
     return p
 
 
@@ -59,7 +59,7 @@ def get_color(res):
     for i in range(res-1):
         for j in range(res-1):
             if (i+j) % 2 == 0:
-                color[i, j] = 888
+                color[i, j] = 255
             else:
-                color[i, j] = 120
+                color[i, j] = 2
     return color.reshape(-1)

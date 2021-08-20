@@ -2,7 +2,9 @@ import os
 import matplotlib.pyplot as plt
 import pickle
 
-PROJECT_ROOT_DIR = "."
+
+
+PROJECT_ROOT_DIR = '.'
 IMAGES_PATH = os.path.join(PROJECT_ROOT_DIR, "images")
 MODEL_PATH = os.path.join(PROJECT_ROOT_DIR, "model")
 DATA_PATH = os.path.join(PROJECT_ROOT_DIR, "data")

@@ -1,7 +1,8 @@
 # User Define
-data/
 images/
-
+logs/
+result_*.hd5f
+*.dat
 #VSCode
 .vscode/*
 # !.vscode/settings.json

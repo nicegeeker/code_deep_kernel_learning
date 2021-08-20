@@ -72,7 +72,7 @@ class RBFWarpUnit(nn.Module):
         self.register_buffer('r', torch.tensor([r_0, r_1]))
 
         # parameter no constrain
-        self.weight_true = nn.Parameter(torch.randn(()))
+        self.weight_true = nn.Parameter((torch.randn(()) - 0.8)*2)
 
     def forward(self, x):
         temp = 1.0 + torch.exp(torch.tensor(3.0/2.0))/2.0
@@ -101,7 +101,8 @@ def rbfunit_sequential(res=1, xlim=[0.0, 1.0], ylim=[0.0, 1.0]):
     r_0s, r_1s = np.meshgrid(rx, ry)
     r_0s = r_0s.flatten()
     r_1s = r_1s.flatten()
-    a = (2*(3**res - 1))**2
+#     a = (2*(3**res - 1))**2
+    a = 2*(3**res - 1)**2
     model = nn.Sequential()
     i = 0
     for r_0, r_1 in zip(r_0s, r_1s):
